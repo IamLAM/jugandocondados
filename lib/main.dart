@@ -32,6 +32,8 @@ class _DicePageState extends State<DicePage> {
               onPressed: () {
                 setState(() {
                   dadoizquierdo = Random().nextInt(6) + 1;
+                  dadoderecho = Random().nextInt(6) + 1;
+
                   print("Dado izquierdo presionado:$dadoizquierdo");
                 });
               },
@@ -42,6 +44,7 @@ class _DicePageState extends State<DicePage> {
             child: TextButton(
               onPressed: () {
                 setState(() {
+                  dadoizquierdo = Random().nextInt(6) + 1;
                   dadoderecho = Random().nextInt(6) + 1;
                   print("Dado derecho presionado:$dadoderecho");
                 });
