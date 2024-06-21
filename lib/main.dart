@@ -24,8 +24,10 @@ class _DicePageState extends State<DicePage> {
   int dadoizquierdo = 1, dadoderecho = 1;
 
   void cambiarDado() {
-    dadoizquierdo = Random().nextInt(6) + 1;
-    dadoderecho = Random().nextInt(6) + 1;
+    setState(() {
+      dadoizquierdo = Random().nextInt(6) + 1;
+      dadoderecho = Random().nextInt(6) + 1;
+    });
   }
 
   @override
@@ -36,9 +38,7 @@ class _DicePageState extends State<DicePage> {
           Expanded(
             child: TextButton(
               onPressed: () {
-                setState(() {
-                  cambiarDado();
-                });
+                cambiarDado();
               },
               child: Image.asset("images/dice$dadoizquierdo.png"),
             ),
@@ -46,9 +46,7 @@ class _DicePageState extends State<DicePage> {
           Expanded(
             child: TextButton(
               onPressed: () {
-                setState(() {
-                  cambiarDado();
-                });
+                cambiarDado();
               },
               child: Image.asset("images/dice$dadoderecho.png"),
             ),
